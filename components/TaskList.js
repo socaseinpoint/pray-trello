@@ -1,12 +1,17 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
+import AddTask from './AddTask';
+import TaskListItem from './TaskListItem';
 
-const TaskList = ({list}) => (
-  <View>
-    {list.map((task) => (
-      <Text>{task.name}</Text>
-    ))}
-  </View>
-);
+const TaskList = ({ list, loading, error, deskId, navigate }) => {
+  return (
+    <View>
+      <AddTask />
+      {list.map((task) => (
+        <TaskListItem name={task.name} id={task.id} navigate={navigate} />
+      ))}
+    </View>
+  );
+};
 
 export default TaskList;

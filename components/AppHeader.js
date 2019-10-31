@@ -8,15 +8,16 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: 'white',
-    borderBottomColor: '#E5E5E5',
-    borderBottomWidth: 1,
-    height: 64,
+  },
+  title: {
+    fontSize: 17,
+    lineHeight: 20,
   }
 });
 
 const AppHeader = ({title}) => (
   <View style={styles.header}>
-    <Text>{title}</Text>
+    <Text style={styles.title}>{title}</Text>
   </View>
 );
 

@@ -4,18 +4,16 @@ import { getTask } from '../selectors/task';
 import Task from '../components/Task';
 
 const TaskContainer = ({ navigation }) => {
-  const task = useSelector((state) => getTask(state));
-  const deskId = navigation.getParam('id', null);
+  const taskId = navigation.getParam('taskId', null);
+  const task = useSelector((state) => getTask(state, taskId));
+
+  console.log('taskId', taskId);
+  console.log('task', task);
 
   return (
-    <>
     <Task
-      loading={task.loading}
-      error={task.error}
-      list={task.results}
-      deskId={deskId}
+      name={task.name}
     />
-    </>
   );
 };
 

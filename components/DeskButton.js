@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
 
 const DeskButton = ({ title, navigate, id }) => {
   function handlePress() {
-    navigate('Task', {
+    navigate('TaskList', {
       id,
     });
   }

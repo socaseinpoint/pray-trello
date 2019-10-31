@@ -1,14 +1,8 @@
 import React from 'react';
-import { View, StyleSheet, Text } from 'react-native';
-import TaskList from './TaskList';
+import { View, Text } from 'react-native';
 
-const Desk = ({ list, loading, error, deskId }) => {
-  return (
-    <View>
-      <Text>{deskId}</Text>
-      <TaskList list={list} />
-    </View>
-  );
-};
+const Task = ({name}) => (
+  <View><Text>{name}</Text></View>
+);
 
-export default Desk;
+export default Task;

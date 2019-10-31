@@ -9,6 +9,13 @@ const initialState = {
       done: false,
       type: 'my',
     },
+    {
+      id: 2,
+      name: 'Prayer item 2',
+      desk: 1,
+      done: false,
+      type: 'my',
+    },
   ],
 };
 
