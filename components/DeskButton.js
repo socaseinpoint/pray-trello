@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet, Text } from 'react-native';
+import { View, StyleSheet, Text, Button } from 'react-native';
 
 const styles = StyleSheet.create({
   button: {
@@ -9,9 +9,21 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     marginBottom: 10,
-  }
-})
+  },
+});
 
-const DeskButton = ({ children }) => <View style={styles.button}><Text>{children}</Text></View>;
+const DeskButton = ({ title, navigate, id }) => {
+  function handlePress() {
+    navigate('Task', {
+      id,
+    });
+  }
+
+  return (
+    <View style={styles.button}>
+      <Button title={title} onPress={handlePress} />
+    </View>
+  );
+};
 
 export default DeskButton;

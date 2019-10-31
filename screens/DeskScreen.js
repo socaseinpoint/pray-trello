@@ -3,13 +3,13 @@ import AppHeader from '../components/AppHeader';
 import AppContent from '../components/AppContent';
 import DeskContainer from '../containers/DeskContainer';
 
-const MyDesk = () => (
+const DeskScreen = ({ navigation }) => (
   <>
     <AppHeader title="My Desk" />
     <AppContent>
-      <DeskContainer />
+      <DeskContainer navigation={navigation} />
     </AppContent>
   </>
 );
 
-export default MyDesk;
+export default DeskScreen;

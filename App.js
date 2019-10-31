@@ -18,18 +18,19 @@ import {
 } from 'react-native';
 import store from './store';
 
-import MyDesk from './pages/MyDesk';
+import AppContainer from './navigator';
 
 const App: () => React$Node = () => {
   return (
     <>
       <Provider store={store}>
+        <AppContainer />
         <StatusBar barStyle="dark-content" />
         <SafeAreaView>
           <ScrollView
             contentInsetAdjustmentBehavior="automatic"
             style={styles.scrollView}>
-              <MyDesk />
+            <Text>12345</Text>
             {global.HermesInternal == null ? null : (
               <View style={styles.engine}>
                 <Text style={styles.footer}>Engine: Hermes</Text>

@@ -15,7 +15,7 @@ const initialState = {
       name: 'Completed',
     },
   ],
-}
+};
 
 const deskReducer = (state = initialState) => {
   return state;
