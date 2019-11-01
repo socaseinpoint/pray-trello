@@ -1,6 +1,8 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import Swatch from './Swatch';
+import TaskMembers from './TaskMembers';
+import TaskComments from './TaskComments';
 
 const styles = StyleSheet.create({
   col: {
@@ -57,7 +59,7 @@ const TaskTab = ({ value, label, comment }) => (
   </View>
 );
 
-const Task = ({ createdAt, lastPrayed, prayedTotal, prayedByMe, prayedByOthers }) => (
+const Task = ({ createdAt, lastPrayed, prayedTotal, prayedByMe, prayedByOthers, members, comments }) => (
   <View>
     <View style={styles.col}>
       <View style={styles.lastPrayed}>
@@ -92,6 +94,8 @@ const Task = ({ createdAt, lastPrayed, prayedTotal, prayedByMe, prayedByOthers }
         />
       </View>
     </View>
+    <TaskMembers members={members} />
+    <TaskComments comments={comments} />
   </View>
 );
 
