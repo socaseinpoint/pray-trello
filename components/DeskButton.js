@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet, Text, Button } from 'react-native';
+import { View, StyleSheet, Text, TouchableOpacity } from 'react-native';
 
 const styles = StyleSheet.create({
   button: {
@@ -10,6 +10,11 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     marginBottom: 10,
   },
+  text: {
+    fontSize: 17,
+    lineHeight: 20,
+    color: '#514D47',
+  }
 });
 
 const DeskButton = ({ title, navigate, id }) => {
@@ -20,9 +25,11 @@ const DeskButton = ({ title, navigate, id }) => {
   }
 
   return (
-    <View style={styles.button}>
-      <Button title={title} onPress={handlePress} />
-    </View>
+    <TouchableOpacity onPress={handlePress}>
+      <View style={styles.button}>
+        <Text style={styles.text}>{title}</Text>
+      </View>
+    </TouchableOpacity>
   );
 };
 

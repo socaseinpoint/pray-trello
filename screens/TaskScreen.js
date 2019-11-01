@@ -1,21 +1,22 @@
 import React from 'react';
 import { SafeAreaView, ScrollView } from 'react-native';
-import AppContent from '../components/AppContent';
 import TaskContainer from '../containers/TaskContainer';
+import TaskHeader from '../components/TaskHeader';
 
 const TaskScreen = ({ navigation }) => (
   <SafeAreaView>
     <ScrollView contentInsetAdjustmentBehavior="automatic">
-      <AppContent>
-        <TaskContainer navigation={navigation} />
-      </AppContent>
+      <TaskContainer navigation={navigation} />
     </ScrollView>
   </SafeAreaView>
-  
 );
 
-TaskScreen.navigationOptions = {
-  title: 'To Do',
+TaskScreen.navigationOptions = ({navigation}) => {
+  const title = navigation.getParam('taskName', null);
+  return ({
+    header: () => <TaskHeader goBack={navigation.goBack} title={title} />,
+    headerLeft: null,
+  });
 };
 
 export default TaskScreen;

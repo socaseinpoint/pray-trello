@@ -3,22 +3,15 @@ import { SafeAreaView, ScrollView } from 'react-native';
 import AppContent from '../components/AppContent';
 import TaskListContainer from '../containers/TaskListContainer';
 
-const SubTaskListScreen = ({ navigation }) => (
+const SubTaskListScreen = ({ navigation, isMy }) => (
   <SafeAreaView>
     <ScrollView contentInsetAdjustmentBehavior="automatic">
       <AppContent>
-        <TaskListContainer navigation={navigation} />
+        <TaskListContainer navigation={navigation} isMy={isMy} />
       </AppContent>
     </ScrollView>
   </SafeAreaView>
-  
 );
 
-SubTaskListScreen.navigationOptions = {
-  headerMode: 'none',
-  navigationOptions: {
-      headerVisible: false,
-  }
-};
 
 export default SubTaskListScreen;

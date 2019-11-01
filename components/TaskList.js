@@ -8,7 +8,14 @@ const TaskList = ({ list, loading, error, deskId, navigate }) => {
     <View>
       <AddTask />
       {list.map((task) => (
-        <TaskListItem name={task.name} id={task.id} navigate={navigate} />
+        <TaskListItem
+          name={task.name}
+          id={task.id}
+          navigate={navigate}
+          key={task.id}
+          prayedTotal={task.prayedTotal}
+          membersQuantity={task.members.length}
+        />
       ))}
     </View>
   );

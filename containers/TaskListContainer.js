@@ -1,12 +1,11 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { getTaskList } from '../selectors/task';
+import { getMyTaskList, getSubTaskList } from '../selectors/task';
 import TaskList from '../components/TaskList';
 
-const TaskListContainer = ({ navigation }) => {
-  const task = useSelector((state) => getTaskList(state));
+const TaskListContainer = ({ navigation, isMy }) => {
   const deskId = navigation.getParam('id', null);
-
+  const task = isMy ? useSelector((state) => getMyTaskList(state)) : useSelector((state) => getSubTaskList(state));
   return (
     <TaskList
       loading={task.loading}

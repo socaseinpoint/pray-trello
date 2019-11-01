@@ -1,6 +1,5 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import { red } from 'ansi-colors';
 
 const styles = StyleSheet.create({
   header: {
@@ -8,10 +7,14 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: 'white',
+    padding: 15,
+    paddingTop: 60,
+    paddingBottom: 23,
   },
   title: {
     fontSize: 17,
     lineHeight: 20,
+    color: '#514D47',
   }
 });
 

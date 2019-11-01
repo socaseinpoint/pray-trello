@@ -7,12 +7,13 @@ const TaskContainer = ({ navigation }) => {
   const taskId = navigation.getParam('taskId', null);
   const task = useSelector((state) => getTask(state, taskId));
 
-  console.log('taskId', taskId);
-  console.log('task', task);
-
   return (
     <Task
-      name={task.name}
+      createdAt={task.createdAt}
+      lastPrayed={task.lastPrayed}
+      prayedTotal={task.prayedTotal}
+      prayedByMe={task.prayedByMe}
+      prayedByOthers={task.prayedByOthers}
     />
   );
 };

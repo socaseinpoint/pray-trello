@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, Button } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import SvgUri from 'react-native-svg-uri';
 import handsIcon from '../dist/icons/hands.svg';
 import prayerIcon from '../dist/icons/prayer.svg';
@@ -49,12 +49,13 @@ const styles = StyleSheet.create({
   nameText: {
     fontSize: 17,
     lineHeight: 22,
+    color: '#514D47',
   },
   tab: {
     flexDirection: 'row',
     alignItems: "center",
     marginRight: 4,
-    minWidth: 30,
+    minWidth: 50,
   },
   tabLabel: {
     fontSize: 12,
@@ -65,7 +66,7 @@ const styles = StyleSheet.create({
   }
 });
 
-const TaskListItem = ({ id, name, navigate }) => (
+const TaskListItem = ({ id, name, navigate, membersQuantity, prayedTotal, }) => (
   <View style={styles.task}>
     <View style={styles.colLeft}>
       <View style={styles.swatch} />
@@ -73,23 +74,24 @@ const TaskListItem = ({ id, name, navigate }) => (
         <View />
       </View>
       <View style={styles.name}>
-        <Button onPress={() => {navigate('Task', {taskId: id})}} title={name} />
-        <Text style={styles.nameText} numberOfLines={1} ellipsizeMode='tail'>
-          666
-        </Text>
+        <TouchableOpacity onPress={() => {navigate('Task', { taskId: id, taskName: name })}} >
+          <Text style={styles.nameText} numberOfLines={1} ellipsizeMode='tail'>
+            {name}
+          </Text>
+        </TouchableOpacity>
       </View>
     </View>
     <View style={styles.colRight}>
       <View style={styles.tab}>
-        <SvgUri style={styles.tabIcon} source={handsIcon} width="22" height="29" />
+        <SvgUri style={styles.tabIcon} source={prayerIcon} width="17" height="20" />
         <Text style={styles.tabLabel}>
-          3
+          {membersQuantity}
         </Text>
       </View>
       <View style={styles.tab}>
-        <SvgUri style={styles.tabIcon} source={prayerIcon} width="17" height="20" />
+        <SvgUri style={styles.tabIcon} source={handsIcon} width="22" height="29" />
         <Text style={styles.tabLabel}>
-          123
+          {prayedTotal}
         </Text>
       </View>
     </View>
